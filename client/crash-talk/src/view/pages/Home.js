@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import classes from "./Home.module.css";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -18,13 +17,13 @@ const Home = () => {
   };
 
   return (
-    <div className={classes.joinOuterContainer}>
-      <div className={classes.joinInnerContainer}>
-        <h1 className={classes.heading}>Join</h1>
+    <div className={"classes.joinOuterContainer"}>
+      <div className={"classes.joinInnerContainer"}>
+        <h1 className={"classes.heading"}>Join</h1>
         <div>
           <input
             placeholder={""}
-            className={classes.joinInput}
+            className={"classes.joinInput"}
             type={"text"}
             onChange={onNameChangeHandler}
           />
@@ -32,16 +31,13 @@ const Home = () => {
         <div>
           <input
             placeholder={""}
-            className={`${classes.joinInput} ${classes.mt20}`}
+            className={`${"classes.joinInput"} ${"classes.mt20"}`}
             type={"text"}
             onChange={onRoomChangeHandler}
           />
         </div>
-        <Link
-          onClick={onClickLinkHandler}
-          to={`/chat?name=${name}&room=${room}`}
-        >
-          <button className={`${classes.button} ${classes.mt20}`}>
+        <Link onClick={onClickLinkHandler} to={`/chat/${name}`}>
+          <button className={`${"classes.button"} ${"classes.mt20"}`}>
             Sign In
           </button>
         </Link>

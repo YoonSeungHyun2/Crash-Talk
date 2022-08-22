@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./src/view/pages/Login";
-import Register from "./src/view/pages/Register";
-import Home from "./src/view/pages/Home";
-import Chat from "./src/view/pages/Chat";
+import Login from "./view/pages/Login";
+import Register from "./view/pages/Register";
+import Home from "./view/pages/Home";
+import Chat from "./view/pages/Chat";
 import "./App.css";
-import { AuthContextProvider } from "./src/stores/auth-context";
+import { AuthContextProvider } from "./stores/auth-context";
 
 const App = () => {
   return (

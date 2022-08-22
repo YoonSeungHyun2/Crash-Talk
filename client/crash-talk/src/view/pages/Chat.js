@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
 import io from "socket.io-client";
-import classes from "./Card.module.css";
+
+import GV from "../../stores/CONSTANTS/global_variables";
 
 let socket;
 
@@ -12,7 +13,6 @@ const Chat = (props) => {
   const [roomState, setRoomState] = useState("");
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
-  const ENDPOINT = "http://localhost:4000";
   const location = useLocation();
 
   const sendMessage = (event) => {
@@ -32,7 +32,7 @@ const Chat = (props) => {
     setRoomState(String(room));
     socket = io({
       cors: {
-        origin: `${ENDPOINT}`,
+        origin: `${GV.getServerURL()}`,
         methods: ["GET", "POST"],
         credentials: true,
         transports: ["websocket", "polling"],
@@ -49,7 +49,7 @@ const Chat = (props) => {
         }
       },
     });
-  }, [ENDPOINT, location.search]);
+  }, [location.search]);
 
   useEffect(() => {
     socket.on("message", (message) => {
@@ -59,8 +59,8 @@ const Chat = (props) => {
   }, [messages]);
 
   return (
-    <div className={classes.outerContainer}>
-      <div className={classes.container}>
+    <div className={"classes.outerContainer"}>
+      <div className={"classes.container"}>
         {messages.map((message, i) => (
           <div key={i}>message : {message.text}</div>
         ))}

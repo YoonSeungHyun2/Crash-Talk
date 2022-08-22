@@ -1,23 +1,18 @@
-button {
+.button {
     border-radius: 20px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--secondary-color);
-    color: #FFFFFF;
+    border: 1px solid rgba(190, 190, 190, 0.46);
+    background-image:linear-gradient(to right, #a8edea,  #fed6e3);
     font-size: 12px;
     font-weight: bold;
     padding: 12px 45px;
     text-transform: uppercase;
     cursor: pointer;
-    border-color: rgba(243, 241, 241, 0.24);
-    box-shadow: 0 15px 15px rgba(0,0,0,0.06);
+    box-shadow: 3px 5px 5px rgba(0,0,0,0.2);
 
 }
 
-button:hover {
+.button:hover {
     transform: scale(1.05);
-}
-
-button.signup_btn {
-    background-color: transparent;
-    border-color: #FFFFFF;
+    background-image:linear-gradient(to right, #d0fdfa, #fffdfd);
+    color: rgb(108, 127, 210)
 }
